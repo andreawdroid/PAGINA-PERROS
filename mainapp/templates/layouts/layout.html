@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+<!--Titulo de cada pagina en concreto-->
+            {% endblock %}
+             | Dog
+        </title>
+        {% load static %}<!--   Carga de ficheros estatic-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"> 
+    </head>
+    <body>
+        <!-- Cabesera de la pagina -->
+        <header>
+            <div id="logotipo"><!--Se usa id porque sera algo que estara una vez en la pagina-->
+                <!--Logo Dijango-->
+                <img src="{% static 'imagenes/logo.png' %}" >
+                <h1>Dog House</h1>
+            </div>
+        </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            {% if user.email%}
+            <li>
+                <a href="{% url 'list_articles' %}">Categorias</a>
+                <ul>
+                    {% for category in  Categories%}
+                        <li>
+                            <a href="{% url 'category' category.0 %}">{{category.1}}</a>
+                        </li>
+                    {%endfor%}
+
+                </ul>
+            </li>
+            {% for page in pages%}
+                <li>   
+                    <a href="{% url 'page' page.2%}">{{page.1}}</a>
+                </li>
+            {%endfor%}
+
+            <li>
+                <a href="{% url 'logout' %}">Cerrar sesion</a>
+            </li>
+
+            {% else%}
+                <li>
+                    <a href="{% url 'register' %}">Registro</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">Login</a>
+                </li>
+        
+                {%endif%}
+
+        </ul>
+    </nav>
+    
+    <div id="content">
+        <div class="box">
+           
+            {% block content %}
+            <strong>Contenido del bloque originalidad</strong>
+            {% endblock %}
+        </div>
+        
+    </div>
+    <footer>
+        CURSO DE DJANGO ADSO 2013 &copy; Aprendiz Andrea trujillo - {%now "d/m/Y h:m:s"%}
+    </footer>
+    </body>
+
+</html>

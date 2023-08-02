@@ -1,0 +1,215 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>etiquetas</title>
+</head>
+<center>
+<body> 
+    <header>
+     <h1>input type</h1>
+     <!--define un campo de una sola linea de texto-->
+    </header>
+    <form>
+        Nombre:<br>
+        <input type="text" name="firstname"> <br>
+        Apellidos:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h1>input type password</h1>
+    <!--define un campo ñpara contraseñas-->
+    <form >
+        Nombre de usuario:<br>
+        <input type="text" name="username"><br>
+        contraseña:<br>
+        <input type="password" name="psw">
+    </form>
+
+    <h1>input type submit</h1>
+    <!--define un boton para enviar los datos del formulario-->
+    <form action="/action_page.php">
+       Nombre:<br>
+       <input type="text" name="firstname"> <br>
+       Apellidos:<br>
+       <input type="text" name="lastname"> <br><br>
+       <input type="sunmit" value="Enviar">
+    </form>
+
+    <h1>Input type reset</h1>
+    <!--define un boton para resetear todos-->
+    <form action="/action_page.php">
+        Nombre:<br>
+        <input type="text" name="lastname"> <br><br>
+        Apellidos:<br>
+        <input type="text" name="lastname"> <br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset">
+    </form>
+    
+
+    <h1>Input type radio</h1>
+    <!--define un radio button, que te permite seleccionar UNA opcion entre varias.-->
+    <form>
+        <input type="radio" name="gender" value="male" 
+        checked> hombre<br>
+        <input type="radio" name="gender" value="female">
+        Mujer<br>
+        <input type="radio" name="gender" value="other"> otro
+    </form>
+
+    <h1>Input type checkbox</h1>
+    <!--define un checkbox. Nos permite seleccionar ninguna o varias opciones -->
+
+    <form >
+        <input type="checkbox" name="vehicle1" value="Bike">
+     Tengo una bicicleta<br>
+        <input type="checkbox" name="vehicle2" value="car">
+        Tengo un coche
+    
+    </form>
+
+    <h2>Input type button</h2>
+    <!--Define un boton-->
+    <input type="button" onclick="alert('¡Hola programador!')" value="¡Haz click!">
+
+    <p>En HTML5 se añadieron varios tipos nuevos:</p>
+
+        <p>color</p>
+        <p>date</p>
+        <p>datetime-local</p>
+        <p>email</p>
+        <p> month</p>
+        <p>number</p>
+        <p>range.</p>
+        search<br>
+        tel<br>
+        time<br>
+        url<br>
+        week<br>
+
+    <h1>Input type color</h1>
+    <p>
+    
+    <h1>Input type date</h1>
+    <form>
+        Tu cumpleaños:
+        <input type="date" name="birthday">
+      </form>
+    <!-- Se puede añadir los atributos min y max para restringir la selección.-->
+    <form>
+        Fecha antes del 1980-01-01:
+        <input type="date" name="bday" max="1979-12-31"><br>
+        Fecha después del 2000-01-01:
+        <input type="date" name="bday" min="2000-01-02"><br>
+      </form>
+    
+    <h1>Input type datetime-local</h1>
+    <!--Se usa para una fecha y hora sin tener en cuenta la zona horaria.-->
+    <form>
+        ¿Cuando te registraste? (fecha y hora):
+        <input type="datetime-local" name="daytime">
+      </form>
+
+    <h1>Input type datetime-local</h1>
+    <!--Se usa para una fecha y hora sin tener en cuenta la zona horaria.-->
+    <form>
+        ¿Cuando te registraste? (fecha y hora):
+        <input type="datetime-local" name="daytime">
+      </form>
+    
+    <h1>Input type email</h1>
+    <!--Para contener direcciones de correo electrónico.-->
+    <form>
+        Correo electrónico:
+        <input type="email" name="email">
+      </form>
+
+    <h1>Input type file</h1>
+    <!--Define un campo para subir ficheros-->
+    <form>
+        Selecciona un fichero: <input type="file" name="myFile">
+      </form>
+
+      <h1>Input type month</h1>
+      <!--Permite seleccionar mes y año.-->
+      <form>
+        Mes y año:
+        <input type="month" name="monthYear">
+      </form>
+
+    <h1>Input type number</h1>
+    <!--Sirve para valores numéricos. Se puede restringir los números aceptados usando algunos atributos-->
+    <form>
+        Cantidad (entre 1 y 5):
+        <input type="number" name="quantity" min="1" max="5">
+      </form>
+
+      <h1>Restricciones de los inputs</h1>
+
+      checked: Especifica si un input de tipo checkbox o radio tiene que estar seleccionado por defecto<br>
+      disabled: Especifica si un input debería estar deshabilitado<br>
+      max: Especifica el máximo del valor de un input<br>
+      maxlength: Especifica el número máximo de caracteres<br>
+      min: Especifica el valor mínimo del input<br>
+      pattern: Especifica una expresión regular para chequear el valor del input<br>
+      readonly: Especifica si el input no se puede cambiar<br>
+      required: Especifica si el input es obligatorio de rellenar<br>
+      size: Especifica el ancho (en caracteres) para el input<br>
+      step: Especifica el intervalo para pasar de un valor numérico a otro<br>
+      value: Especifica el valor por defecto del input<br>
+      
+      <form>
+        Cantidad:
+        <input type="number" name="points" min="0" max="100" step="10" value="30">
+      </form>
+
+    <h1>Input type range</h1>
+    <!--Proporciona un slider para seleccionar un valor numérico entre dos valores (por defecto de 0 a 100)-->
+    <form>
+        <input type="range" name="points" min="0" max="10">
+      </form>
+    
+    <h1>Input type search</h1>
+    <!--Se usa para buscadores (se comporta como un input text)-->
+    <form>
+        Busca en Google:
+        <input type="search" name="googlesearch">
+      </form>
+
+
+      <h1>Input type tel</h1>
+      <!--Se usa para números de teléfono-->
+      <form>
+        Teléfono:
+        <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+      </form>
+  
+    <h1>Input type time</h1>
+    <!--Permite seleccionar una hora (sin tener en cuenta la zona horaria)-->
+    <form>
+        Selecciona la hora:
+        <input type="time" name="usr_time">
+      </form>
+    
+    <h1>Input type url</h1>
+    <!--Se usa para rellenar el input con una URL-->
+    <form>
+        Añade tu página web:
+        <input type="url" name="homepage">
+      </form>
+    
+    <h1>Input type week</h1>
+    <!--Se usa para seleccionar la semana y el año-->
+    <form>
+        Selecciona la semana:
+        <input type="week" name="week_year">
+      </form>
+    
+
+</center>
+    
+</body>
+</html>

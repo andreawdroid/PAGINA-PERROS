@@ -1,0 +1,141 @@
+:root{/*pseudo selectores*/
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#ffc107;
+    --secundario:#0097a7;
+    --gris:#757575;
+}
+/*globales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*hack para box model */
+}
+*, *::before, *:after {
+    box-sizing: inherit;
+   }
+body{
+    font-size: 16px;/*1rem = 10px*/
+    /*lo anterior para que los sitios web se adapten a varios navegadores*/
+    font-family:'krub', sans-serif;
+    /*utilizamos linear_gradient para aplicar los parametros de hacia donde va el degrado, color de inicio con porcentaje de relleno color final con porcentaje de relleno, remplazamos el color #DFE9F3 por variable*/
+    /*background-image: linear-gradient(to top,  #DFE9F3 0%, vra(--blanco))100%;*/
+    background-image: linear-gradient(to top, var(--gris_claro)0%, var(--blanco)100%);
+}
+/*tipografias*/
+h1{
+   font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+ h1,h2,h3{
+    text-align: center;
+ }
+ .titulo{
+    text-align: center ;
+    font-size: 3.8rem;
+ }
+ 
+.titulo span{
+    font-size: 20px;
+}
+.titulo{
+    text-align: center;
+    font-size:  3.8rem;
+    font-family:'krub', sans-serif;
+}
+.contenedor{
+    max-width: 120rem;/*toma 1200px como maximo*/
+    /*margin-top:0;
+    margin-right: auto;
+    margin-left: auto;
+
+    margin: 0 auto 0 auto;*/
+    margin: 0 auto;
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem  3rem; /*aqui no es necesario las otras porque se repite*/
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;/* sin linea*/
+    text-transform: uppercase;/*mayusculas*/
+    font-weight: bold; /*negrita*/
+    border-radius: .5rem;/*esquinas redondeadas del boton*/
+    width: 90%;/*para tomar en dispositivos moviles todos el ancho*/
+    text-align: center;/*alineacion*/
+}
+
+@media (min-width:768px){ /*ancho minimo de pantalla*/
+      .boton{
+            width:auto; /* se reinicia en valor para pantalla normal*/
+      }
+}
+/*navegacion principal*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    display: flex;/*propiedad para modificar espacios y se muestran de izquierda a derecha*/
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media (max-width: 768px) { /*desde una tablet o tamaño mas grande*/
+    .navegacion-principal{
+        flex-direction: column;
+    justify-content: space-between;/*distribuye los espacios en la 
+                                 horizontal en las esquinas*/
+    text-align: center;
+    }
+}
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5); 
+padding: 2rem;
+border-radius: 1rem
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none; /*quita la linea del link*/
+    font-size: 2rem;
+    font-weight:700;/* o puede colocar bold*/
+    padding: 1rem;/* crea un espacio interno en el nav*/
+}
+.navegacion-principal a:hover {/* pseudo clase*/
+    background-color: var(--primario);/*color de enlace con mouse*/
+    color: var(--oscuro)
+}
+.hero{
+    background-image: url(..//img/hero.jpg);
+    background-repeat: no-repeat; /*No repite imagen*/
+    background-size: cover; /*toma el ancho disponible en pantalla*/
+    height: 450px;
+    /*padding: 20px;*/
+    position: relative;/*posicion relativa del padre*/
+    margin-bottom: 2rem;
+}
+.contenido-hero{
+    position: absolute; /*posicion absoluta del hijo*/
+    background-color: rgba(0,0,0, .7);/* sismtaxis anterior*/
+    background-color: rgb(0 0 0 / 70%);/*nueva sintaxis*/
+    width: 100%;
+    height: 100%;
+    /*alineacion vertical y horizontal*/
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*alineacion horizontal*/
+    justify-content: center;/*alineacion vertical*/
+}
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco)
+}
+.ubicacion{
+    display: flex;
+    align-items: flex-end; /*alinea verticamente hacia abajo*/
+}

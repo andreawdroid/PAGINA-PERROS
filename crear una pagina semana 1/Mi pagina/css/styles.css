@@ -1,0 +1,341 @@
+/*pseudo selectores*/
+:root {
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    
+    }
+    
+/*globales*/
+html{
+    font-size: 62.5%; 
+    box-sizing: border-box;/*hack para box model*/
+    scroll-snap-type: y mandatory;/*scroll en sentido de las y (vertical)*/
+}  
+/*box model*/
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+     font-size: 16px; /*1rem=10px */
+/* lo anterior para que lso sitioa web se adapten a varios navegadores */
+     font-family: 'Krub', sans-serif;
+     /*utilizamos linear _gradient para aplicar los parametros de hacia donde va el degradado, 
+     color de inico con porcentaje de elleno color final con porcentaje de 
+     relleno,remplazamos el color#DFE9F3 por variable*/
+    /*background-image: linear-gradient(to topm #DFE9F3 0%, var (--blanco) 100%*/
+     background-image: linear-gradient(to top,var(--gris_claro) 0%,var(--blanco)100%);
+ /*<h1.h3*/
+}
+.contenedor{
+    max-width: 120rem; /*toma 1200 px como maximo
+    margin-top:0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+    margin: 0 auto;
+}
+/*boton*/
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem; /*aqui no es necesario las otras porque se repiten*/
+    margin-top:3rem;
+    font-size: 2rem;
+    text-decoration: none; /*sin linea*/
+    text-transform: uppercase; /*mayusculas*/
+    font-weight: bold; /*negrita*/
+    border-radius: .5rem; /*esquinas redondeadas del boton*/
+    width: 90%; /*para tomar en dispositivos moviles todo el ancho*/
+    text-align: center; /*alineacion*/
+    border:none;
+
+}
+ .boton:hover{
+    cursor: pointer;
+ }
+
+
+ @media (min-width:768px){ /*ancho minimo de pantalla*/
+    .boton{
+        width: auto; /*se reinicia el valor para pantalla normal*/
+    }
+}
+/* sombra mis servicios */
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding:2rem;
+    border-radius:1rem;
+}
+
+ /* tipografias */
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align:center;
+}/*
+.titulo{
+    text-align: center ;
+    font-size: 3.8rem;    
+} */
+
+/*titulos*/
+.titulo span{
+    font-size: 2rem;
+ }
+.w-sm-100{
+    width: 100%;
+}
+@media(min-width:768px){
+    .w-sm-100{
+        width:auto;
+    }
+}
+.flex{
+    display:flex;
+}
+.alinear-derecha{
+     justify-content: flex-end;
+}
+
+/*menu*/
+/*nav principal*/
+.nav-bg{
+    background-color: var(--secundario);/*color fondo menu*/
+
+}
+
+ /*personalizacion menu*/
+.navegacion-principal{
+    display: flex;  /*propiedad para modificar espacios y se muestra de izquierda a derecha */
+    flex-direction: row; /*direccion del menu*/
+    justify-content: space-between;
+    
+}
+
+/*compatibilidad con otros dispositivos*/
+@media (max-width: 768px) { /*desde una table o tamaño mas grande*/
+    .navegacion-principal{
+        flex-direction: column;  /*distribucion de vinculos */
+        justify-content: space-between;/*distribuye los espcaios en 
+                                        la horizonal en las esquinas*/
+    }
+}
+
+/*personalizacion vinculos*/
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;  /*quita la linea del link*/
+    font-size: 2rem;
+    font-weight: 700; /*O puedo colocar bold*/
+    padding: 1rem;/*crea un espacio a lo alto del nav*/
+}   
+
+/*al pasar sobre un vinculo*/
+
+.navegacion-principal a:hover { /*pseudo clase*/
+    background-color: var(--primario); /*color de enlacen con mouse*/
+    color: var(--oscuro); /*color fuente*/
+} 
+
+/*fin menu*/
+
+/*diseño y desarrolo*/
+/*IMG*/
+
+.hero{
+    background-image: url(..//img/hero.jpg);
+    background-repeat: no-repeat; /*no repite la imagen*/
+    background-size: cover;/*toma el ancho disponible en pantalla*/
+    height: 450px;
+    /*padding: 20px;*/
+    position: relative; /*posicion relativa del padre*/
+    margin-bottom: 2rem;
+
+/*contenido*/
+
+   }
+
+   .contenido-hero{
+       position: absolute; /*posicion absoluta del hijo*/
+       background-color: rgba(0, 0, 0, .7);/*sintaxis anterior*/
+       background-color: rgb(0 0 0 .70%); /*opacidad*/
+       width: 100%;
+       height: 100%;
+       /*alineacion verticar y horizontal*/
+       display: flex;
+       flex-direction:column;
+       align-items: center;/*alineacion horizontal*/
+       justify-content:center;/*alineacion vertical*/
+   }
+
+   .contenido-hero h2,
+   .contenido-hero p{
+       color: var(--blanco);
+   }
+
+.contenido-hero .ubicacion{
+    display:flex;
+    align-items: flex-end; /*alinea verticalmente hacia abajo*/
+}
+
+/*scroll en areas especificas*/
+.servicos,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always ;
+}
+
+
+/*servicios*/
+@media (min-width:768px){
+    .servicios{
+         display: grid;
+         /*grid-template-columns:33.3% 33.3% 33.3%;
+         grid-template-columns: 1fr 1fr 1fr: /*fraccion*/
+         grid-template-columns: repeat(3, 1fr);/*las anterior son las iguales*/
+         column-gap: 1rem;
+
+    }
+}
+
+.servicio{
+    /*alineacion de circulos del centro*/
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+}
+
+.servicio h3{
+    /*color texto y acenntuacion normal o 400*/
+    color: var(--secundario);
+    font-weight: normal;
+    text-align:center;
+}
+
+.servicio p{
+    line-height: 2; /*interlineado*/
+}
+
+.servicio .iconos{
+    height: 15rem;/*cuadrado*/
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;/*circulo*/
+    display: flex; /*un incono frente al otro*/
+    flex-direction: row;
+    justify-content: space-evenly; /*horizontal*/
+    align-items: center;/*verticalmente*/
+
+}
+/*contacto formulario*/
+
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem,100%);/*utilizar el valor mas pequeño,tiene 2 parametros*/
+    margin:auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    /*quitamos la linea de afuera del formulario*/
+    border:none;
+}
+
+.formulario legend{
+    text-align: center;/*texto centrado horizontalmente*/
+    font-size: 1.8rem;
+    text-transform: uppercase; /*mayusculas*/
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+ @media (min-width:768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+
+    }
+ }
+
+.campo:nth-child(3),
+.campo:nth-child(4){
+    grid-column: 1 / 3;
+}
+
+.campo{
+    margin-bottom: 1rem;
+
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display:block;
+}
+.input-text{
+    width: 100%;
+    border:none;
+    padding:1.5rem;
+    border-radius:.5rem;
+  
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+/*clase de footer*/
+.footer{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

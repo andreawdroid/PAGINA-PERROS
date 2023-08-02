@@ -1,0 +1,127 @@
+:root{
+    --blanco:#ffffff;
+    --naranja:#ff671d;
+    --negro:#060606;
+}
+    
+
+
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+body{
+    background:lightgrey;
+    
+        font-size: 12px; /*1rem=10px */
+    /* lo anterior para que lso sitioa web se adapten a varios navegadores */
+        font-family: 'Krub', sans-serif;
+      
+    }
+    
+
+#container{
+   /* width: 70%;*/
+    width: 1100px;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+
+
+.boton{
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 1rem 3rem; /*aqui no es necesario las otras porque se repiten*/
+    margin-top: 1rem; /*tamaño*/
+    font-size: 1rem; /*tamaño de*/
+    text-decoration: none; /*sin linea*/
+    text-transform: uppercase; /*mayusculas*/
+    font-weight: bold; /*negrita*/
+    border-radius: .5rem; /*esquinas redondeadas del boton*/
+    width: 80%; /*para tomar en dispositivos moviles todo el ancho*/
+    text-align: center; /*alineacion*/
+    border:none;
+
+}
+ .boton:hover{
+    cursor: pointer;
+ }
+
+
+
+#content{
+    float: left;
+    width: calc(20% - 20px);
+    min-height: 10px;   /*para que el cuadro quede justo*/
+     background: var(--naranja);
+     padding: 40px;
+
+}
+
+.raya{
+    color: rgb(255, 255, 255);
+    margin-top: 8px;
+    margin-bottom: 9;
+    padding-bottom: 11px;
+
+
+  
+}
+
+.article:first-chil{
+    padding-top: 10px;
+    border-bottom: 1px solid #eee;
+
+}
+
+
+aside{
+    float: left;
+    width: calc(80% - 100px);
+    min-height: 800px;
+    background: var(--blanco);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    display: 50%;
+ 
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*idea*/
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+    color:#060606;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+
+}
+.input-text{
+    width: 100%;
+    border:none;
+    padding: 1.5rem;
+    border-radius:.5rem;
+
+}
+
+
+
+

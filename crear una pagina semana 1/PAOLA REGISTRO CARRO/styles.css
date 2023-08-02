@@ -1,0 +1,97 @@
+
+:root{
+    --blanco:#ffffff;
+    --naranja:#ff671d;
+    --negro:#060606;
+}
+    
+
+
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+body{
+    background:lightgrey;
+    
+        font-size: 12px; /*1rem=10px */
+    /* lo anterior para que lso sitioa web se adapten a varios navegadores */
+        font-family: 'Krub', sans-serif;
+      
+    }
+    
+
+#container{
+   /* width: 70%;*/
+    width: 1100px;
+    margin: 0px auto;
+    border: 1px solid black;
+    position: absolute;
+}
+
+
+.boton{
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 1rem; /*aqui no es necesario las otras porque se repiten*/
+    margin-top: 1px; /*tamaño*/
+    font-size: 1rem; /*tamaño de*/
+    text-decoration: none; /*sin linea*/
+    text-transform: uppercase; /*mayusculas*/
+    font-weight: bold; /*negrita*/
+    border-radius: .5rem; /*esquinas redondeadas del boton*/
+    border:none;
+    position: absolute;/*es que no cambia de posicion se mantiene donde esta*/
+    bottom: 50px;/*agregar un espacio hacia abajo*/
+    left:5;/*espacio en la izquierda*/
+    right: 1;/*espacio a la derecha*/
+}
+
+.raya{
+
+    color: rgb(255, 255, 255);
+    margin-top: 8px;
+    margin-bottom: 9;
+    
+
+
+  
+}
+
+aside{
+    float: left;
+    width: calc(80% - 95px);
+    min-height: 960px;
+    background: var(--blanco);
+    padding: 10px;
+    
+
+
+}
+
+#content{
+    float: left;
+    width: calc(20% - 20px);
+    min-height: 900px;   /*para que el cuadro quede justo*/
+     background: var(--naranja);
+     padding: 40px;
+
+}
+
+.carousel{
+    position: absolute;/*es que no cambia de posicion se mantiene donde esta*/
+    top: 10;/*agregar un espacio hacia arriba*/
+    bottom: 2;/*agregar un espacio hacia abajo*/
+    left:20;/*espacio en la izquierda*/
+    right: 0;/*espacio a la derecha*/
+}
+
+.contenido{
+    
+    color:rgb(0, 0, 0);/*color de letra*/
+    border-radius: 1rem;
+    font-size: 15px; /*tamño de letra*/
+    border: 1px solid rgb(0, 0, 0);
+    align-items: center;
+}
